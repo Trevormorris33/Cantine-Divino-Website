@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantine Divino | Italian Excellence in Kampala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#C5A059',
+                        dark: '#1A1A1A',
+                        darker: '#121212',
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        lato: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <style>
+        .swiper-pagination-bullet-active {
+            background: #C5A059 !important;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+            transition: all 0.3s ease;
+            color: #C5A059 !important;
+            display: flex !important;
+            z-index: 100 !important;
+            border: 2px solid #C5A059 !important;
+        }
+        .swiper-button-next {
+            right: 15px !important;
+        }
+        .swiper-button-prev {
+            left: 15px !important;
+        }
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background-color: #C5A059;
+            color: white !important;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        scroll-behavior: smooth;
+    </style>
+</head>
+<body class="font-lato bg-white text-dark dark:bg-darker dark:text-white scroll-smooth transition-colors duration-300">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-white/10 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-playfair text-2xl font-bold tracking-widest text-gold">CANTINE DIVINO</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-dark dark:text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">HOME</a>
+                        <a href="#about" class="text-dark dark:text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
+                        <a href="#gallery" class="text-dark dark:text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
+                        <a href="#menu" class="text-dark dark:text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">MENU</a>
+                        <a href="#directions" class="text-dark dark:text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">DIRECTIONS</a>
+                        <a href="#contact" class="text-dark dark:text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
+                        <!-- Instagram Link -->
+                        <a href="https://www.instagram.com/cantinedivino.ug/" target="_blank" class="text-dark dark:text-white hover:text-gold transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <!-- Theme Toggle -->
+                        <button onclick="toggleDarkMode()" class="text-dark dark:text-white hover:text-gold transition-colors p-2" aria-label="Toggle Dark Mode">
+                            <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+                            <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        </button>
+                        <a href="#contact" class="bg-gold text-white px-6 py-2 rounded-sm text-sm font-bold hover:bg-dark dark:hover:bg-white dark:hover:text-gold transition-all">RESERVE</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center space-x-4">
+                    <!-- Instagram Mobile -->
+                    <a href="https://www.instagram.com/cantinedivino.ug/" target="_blank" class="text-dark dark:text-white hover:text-gold transition-colors" aria-label="Instagram">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <!-- Theme Toggle Mobile -->
+                    <button onclick="toggleDarkMode()" class="text-dark dark:text-white hover:text-gold transition-colors p-2" aria-label="Toggle Dark Mode">
+                        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9h-1m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+                        <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button type="button" onclick="toggleMobileMenu()" class="text-dark dark:text-white hover:text-gold">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 dark:bg-dark/95 backdrop-blur-lg hidden flex-col items-center justify-center space-y-8 transition-all duration-300">
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-dark dark:text-white">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="#home" onclick="toggleMobileMenu()" class="text-3xl font-playfair dark:text-white hover:text-gold transition-colors">HOME</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="text-3xl font-playfair dark:text-white hover:text-gold transition-colors">ABOUT</a>
+        <a href="#gallery" onclick="toggleMobileMenu()" class="text-3xl font-playfair dark:text-white hover:text-gold transition-colors">GALLERY</a>
+        <a href="#menu" onclick="toggleMobileMenu()" class="text-3xl font-playfair dark:text-white hover:text-gold transition-colors">MENU</a>
+        <a href="#directions" onclick="toggleMobileMenu()" class="text-3xl font-playfair dark:text-white hover:text-gold transition-colors">DIRECTIONS</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="text-3xl font-playfair dark:text-white hover:text-gold transition-colors">CONTACT</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="bg-gold text-white px-12 py-4 rounded-sm font-bold hover:bg-dark transition-all">RESERVE</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero.jpg" alt="Cantine Divino Garden" class="w-full h-full object-cover scale-105 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl" data-aos="fade-up">
+            <h1 class="font-playfair text-5xl md:text-7xl text-white mb-6 leading-tight">The Pinnacle of Italian Excellence in Kampala</h1>
+            <p class="text-xl md:text-2xl text-white/90 mb-10 font-light italic">Experience a symphony of flavors at Cantine Divino, where authentic Italian tradition meets modern culinary artistry.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-gold text-white px-10 py-4 text-lg font-bold hover:bg-white hover:text-gold transition-all duration-300">EXPLORE OUR MENU</a>
+                <a href="#contact" class="border-2 border-white text-white px-10 py-4 text-lg font-bold hover:bg-white hover:text-dark transition-all duration-300">RESERVE YOUR TABLE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- USPs Section -->
+    <section class="py-24 bg-gray-50 dark:bg-dark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl text-dark dark:text-white mb-4">Why Cantine Divino?</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-white dark:bg-darker shadow-xl rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold transition-colors duration-500">
+                        <svg class="w-10 h-10 text-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path></svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl mb-4 dark:text-white">All-You-Can-Eat Elegance</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Indulge in our famous selection of premium cuts and Italian specialties without limits.</p>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-white dark:bg-darker shadow-xl rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold transition-colors duration-500">
+                        <svg class="w-10 h-10 text-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl mb-4 dark:text-white">The Perfect Happy Hour</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Unwind with our curated cocktails and gourmet appetizers in a spectacular garden setting.</p>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-white dark:bg-darker shadow-xl rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-gold transition-colors duration-500">
+                        <svg class="w-10 h-10 text-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="font-playfair text-2xl mb-4 dark:text-white">Private Dining</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Host your most exclusive events in our dedicated private rooms, tailored to your every need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 dark:bg-darker transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="font-playfair text-4xl mb-6 dark:text-white">A Legacy of Taste on Mabua Road</h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">Nestled in the heart of Kololo on Mabua Road, Cantine Divino has established itself as Kampala's premier destination for discerning diners. With over 1,300 glowing reviews and a passion for perfection, we offer more than just a meal—we offer an experience.</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">Our philosophy is simple: source the finest ingredients, respect traditional Italian techniques, and provide service that is as spectacular as our cuisine.</p>
+                    <a href="#about" class="text-gold font-bold border-b-2 border-gold pb-2 hover:text-dark dark:hover:text-white hover:border-dark dark:hover:border-white transition-all">LEARN MORE ABOUT US</a>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <img src="assets/tbone.jpg" alt="T-Bone Steak" class="w-full h-64 object-cover rounded-sm">
+                    <img src="assets/tagliere.jpg" alt="Tagliere" class="w-full h-64 object-cover rounded-sm mt-8">
+                    <img src="assets/ribs.jpg" alt="Pork Ribs" class="w-full h-64 object-cover rounded-sm -mt-8">
+                    <div class="bg-dark p-8 flex items-center justify-center text-center">
+                        <span class="text-white font-playfair text-2xl">Excellence in every bite.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-gray-50 dark:bg-dark overflow-hidden transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-playfair text-4xl text-dark dark:text-white mb-4">The Cantine Experience</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Immerse yourself in the spectacular atmosphere and culinary artistry that defines Cantine Divino.</p>
+            </div>
+            
+            <!-- Swiper Carousel -->
+            <div class="swiper gallerySwiper pb-12" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/interior.jpg" alt="Restaurant Interior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <span class="text-white font-playfair text-2xl border-b border-white pb-1">Sophisticated Interior</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/cocktail.jpg" alt="Masterful Mixology" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <span class="text-white font-playfair text-2xl border-b border-white pb-1">Masterful Mixology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/lasagna.jpg" alt="Culinary Tradition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                <span class="text-white font-playfair text-2xl border-b border-white pb-1">Culinary Tradition</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/gallery1.jpg" alt="Exquisite Dining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/gallery2.jpg" alt="Atmospheric Lighting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/gallery3.jpg" alt="Wine Selection" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/gallery4.jpg" alt="Gourmet Platter" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <!-- Slide 8 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/gallery5.jpg" alt="Fine Details" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <!-- Slide 9 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/gallery6.jpg" alt="Table Setting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                    <!-- Slide 10 -->
+                    <div class="swiper-slide">
+                        <div class="relative overflow-hidden group h-[500px] shadow-xl rounded-lg">
+                            <img src="assets/gallery7.jpg" alt="Cozy Ambience" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Divider -->
+    <div class="h-96 parallax" style="background-image: url('assets/hero.jpg');">
+        <div class="w-full h-full bg-black/50 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h2 class="font-playfair text-4xl md:text-5xl mb-4 italic">"An Unforgettable Dining Experience"</h2>
+                <p class="text-xl">— 1,300+ Five Star Reviews</p>
+            </div>
+        </div>
+    </div>
+
+        <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-white dark:bg-darker transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl text-dark dark:text-white mb-4">Our Menu</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Explore our extensive selection of authentic Italian dishes, premium cuts, and curated beverages.</p>
+            </div>
+
+            <!-- Menu Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="switchMenuTab('starters')" class="menu-tab-btn px-6 py-2 border-b-2 border-gold text-gold font-bold transition-all hover:text-gold" id="tab-starters">STARTERS</button>
+                <button onclick="switchMenuTab('mains')" class="menu-tab-btn px-6 py-2 border-b-2 border-transparent font-bold transition-all hover:text-gold text-gray-500 dark:text-gray-400" id="tab-mains">MAINS</button>
+                <button onclick="switchMenuTab('pasta')" class="menu-tab-btn px-6 py-2 border-b-2 border-transparent font-bold transition-all hover:text-gold text-gray-500 dark:text-gray-400" id="tab-pasta">PASTA</button>
+                <button onclick="switchMenuTab('desserts')" class="menu-tab-btn px-6 py-2 border-b-2 border-transparent font-bold transition-all hover:text-gold text-gray-500 dark:text-gray-400" id="tab-desserts">DESSERTS & SIDES</button>
+                <button onclick="switchMenuTab('beverages')" class="menu-tab-btn px-6 py-2 border-b-2 border-transparent font-bold transition-all hover:text-gold text-gray-500 dark:text-gray-400" id="tab-beverages">BEVERAGES</button>
+                <button onclick="switchMenuTab('cocktails')" class="menu-tab-btn px-6 py-2 border-b-2 border-transparent font-bold transition-all hover:text-gold text-gray-500 dark:text-gray-400" id="tab-cocktails">COCKTAILS & WINES</button>
+            </div>
+
+            <div id="menu-content">
+<!-- Starters & Salads Tab -->
+<div id="starters" class="menu-category  grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8" data-aos="fade-up">
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Appetizers</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Bruschetta & Crostini</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Roasted slice of bread, served with a selection of our special sauces</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">29,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Cheese Tagliere</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">130g selection of our famous cheeses, served with toasted bread & honey</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">46,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Cold Cuts Tagliere</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">120g selection of our famous cold cuts, served with toasted bread, pickles & green olives</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">46,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Mixed Tagliere</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">120g best cheeses + 130g best cold cuts, served with toasted bread, honey & pickles</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">69,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Bresaola</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Dry aged beef with balsamic reduction & watermelon</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">44,000</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Soups</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Cream Of Mushrooms</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Fresh mushrooms in a creamy soup</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Chicken Soup</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Zuppa Di Pomodoro</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Traditional Italian tomato soup</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Vegetable Soup</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Carrot, celery, leeks, potatoes & parsley</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Salads</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Caesar</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Lettuce, caesar dressing, parmesan, anchovies, croutons</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">34,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Nicoise</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Lettuce, potatoes, capers, olives, boiled eggs, red onion & tuna</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Tomato & Lettuce</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Fresh tomatoes & romaine lettuce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">26,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Greek</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Feta, black olives, onions, peppers, cherry tomatoes & oregano</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Chicken</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Roasted chicken, green beans, dry tomatoes, potatoes & vinaigrette</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div></div>
+<!-- Mains & Grill Tab -->
+<div id="mains" class="menu-category hidden grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8" data-aos="fade-up">
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Beef Selection</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Fillet Tenderloin</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">70,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Prime Fillet</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">87,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Rump 300g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">70,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Sirloin 300g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">70,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Sirloin On The Bone 500g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">100,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Sirloin On The Bone 1kg</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">190,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">T-Bone 500g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">100,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">T-Bone 700g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">140,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">T-Bone 1.5kg - Fiorentina</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Served only: medium, medium rare or rare</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">200,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Angus Tomahawk 1kg</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">249,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Japanese Wagyu 200g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">120,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Stroganoff (Stew)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">39,000</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Lamb & Pork</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Lamb Chops 300g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">75,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Lamb Chops 600g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">137,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Stinco Di Agnello</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Slow cooked lamb shank in gravy with mashed potatoes</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">100,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Chops In Bbq Sauce</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Succulent pork chops</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Marinated Spare Ribs</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Slow-cooked and glazed</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Chicken & Burgers</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Grilled Chicken Breast 300g</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Quarter Roasted Chicken</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Half Roasted Chicken</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Full Roasted Chicken</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Classic Beef Burger</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">170g flame grilled prime beef</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">45,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Cheese Burger</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">170g prime beef with cheese</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">48,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Wagyu Beef & Truffle Burger</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Premium wagyu with truffle</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">46,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Egg, Bacon & Cheese Burger</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">69,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Chicken Burger</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">42,000</span>
+    </div></div>
+<!-- Authentic Pasta Tab -->
+<div id="pasta" class="menu-category hidden grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8" data-aos="fade-up">
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Fresh Pasta</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Ravioli Di Burrata</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Stuffed with burrata & eggplants, tomato sauce, ricotta</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">48,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Caramelle Di Carne</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Ravioli with ricotta & ham in creamy basil sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">49,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Caramelle Di Formaggio</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Ravioli with cheese served with pesto sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">49,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Caramelle Ricotta & Spinaci</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Ravioli with ricotta & spinach, tomato sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">49,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Maltagliati Ai Porcini</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Homemade pasta in porcini mushroom sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">48,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Tagliatelle Al Ragu'</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Classic bolognese sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">45,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Penne Lamb</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Penne with lamb ragù sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">45,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Risotto Alla Milanese</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Traditional saffron risotto</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">43,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Lasagna Di Zucchine</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Baked homemade zucchini lasagna</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">44,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Beef Lasagna</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Traditional bolognese sauce & parmesan</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">47,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Linguine Chicken Alfredo</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Creamy alfredo sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">48,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Pasta Al Forno</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Baked rigatoni in fontina cheese</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">47,000</span>
+    </div></div>
+<!-- Desserts & Sides Tab -->
+<div id="desserts" class="menu-category hidden grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8" data-aos="fade-up">
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Desserts</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Sorbetto Alla Fragola</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Homemade strawberry sorbet</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Classic Tiramisu</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Espresso-soaked ladyfingers & mascarpone</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">New York Cheesecake</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Rich & creamy with berry compote</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Golden Churros</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">With chocolate dipping sauce</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Chocolate Cake</h4>
+            <p class="text-gray-500 dark:text-gray-400 italic text-sm">Decadent dark chocolate</p>
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">—</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Sides</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Baked Potatoes</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Mashed Potatoes</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Spinach</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">20,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Steamed Rice</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Vegetable Rice</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">20,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">White Beans</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Chickpeas</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Green Salad</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Sauces</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Madagascar Green Pepper</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">9,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Blue Cheese</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Red Wine</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Bearnaise</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">15,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Pili-Pili / Garlic / Chakalaka</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">9,000</span>
+    </div></div>
+<!-- Beverages Tab -->
+<div id="beverages" class="menu-category hidden grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8" data-aos="fade-up">
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Coffee & Tea</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Espresso Single / Double</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">7k / 10k</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Cappuccino Single / Double</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">12k / 15k</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Macchiato Single / Double</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">8k / 11k</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Americano / Black Coffee</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">14,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Latte / Iced Latte</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">13,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Mocha / Hot Chocolate</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">15,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">African / English Coffee</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">15k / 14k</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Tea (Black/Lemon/Herbal)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">15,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">African / Spiced Tea</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">16,000</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Juices & Soft Drinks</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Fresh Juice (Passion/Pineapple)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">16,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Fresh Juice (Mango/Lemon)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">18,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Orange Juice</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">29,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Soda / Still Water (500ml)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">5,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Sparkling Water (500ml)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">7,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">San Pellegrino (750ml)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">22,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Red Bull</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">16,000</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Ciders</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Tusker / Smirnoff Ice</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">15,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Savanna / Hunters</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">18,000</span>
+    </div></div>
+<!-- Cocktails & Wines Tab -->
+<div id="cocktails" class="menu-category hidden grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8" data-aos="fade-up">
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Signature Cocktails</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Long Island Ice Tea</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">45,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Zombie / Margarita</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">37,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Mojito (Classic/Spiced)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">35,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Cosmopolitan / Sex On Beach</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">32,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Negroni / Old Fashioned</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">35,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Dirty / Espresso Martini</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">32k / 35k</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Aperol / Campari Spritz</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">35,000</span>
+    </div>
+    <div class="col-span-full mt-4 mb-2">
+        <h3 class="font-playfair text-2xl text-gold border-b border-gray-100 dark:border-white/10 pb-2">Wines By The Glass</h3>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Coppiere Chianti (Red)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">25,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Cavroa Chardonnay (White)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">22,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Prosecco</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">25,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Sweet Wine (Red/White)</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">20,000</span>
+    </div>
+    <div class="flex justify-between items-start">
+        <div class="flex-grow">
+            <h4 class="font-bold text-lg dark:text-white uppercase">Fragolino Rosso</h4>
+            
+        </div>
+        <div class="flex-grow border-b border-dotted border-gray-300 dark:border-gray-700 mx-4 mb-2"></div>
+        <span class="font-bold text-gold ml-4">22,000</span>
+    </div></div>
+
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#contact" class="bg-dark dark:bg-gold text-white px-12 py-4 font-bold hover:bg-gold dark:hover:bg-white dark:hover:text-gold transition-colors inline-block">BOOK A TABLE</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Directions Section -->
+    <section id="directions" class="py-24 bg-gray-50 dark:bg-dark transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-playfair text-4xl text-dark dark:text-white mb-4">Find Your Way to Italian Excellence</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Located on Mabua Road in the heart of Kampala. Use the map below to find the best route to Cantine Divino.</p>
+            </div>
+            <div class="rounded-sm overflow-hidden shadow-2xl border-4 border-white dark:border-darker transition-colors duration-300" data-aos="zoom-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6709.934984738566!2d32.5855157771996!3d0.33231368583860665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbba21de4103b%3A0x73bb8e14fe62a408!2sCantine%20Divino!5e0!3m2!1sen!2sug!4v1778948244252!5m2!1sen!2sug" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Cantine+Divino+Mabua+Rd+Kampala" target="_blank" class="inline-block bg-gold text-white px-12 py-4 font-bold hover:bg-dark dark:hover:bg-white dark:hover:text-gold transition-colors">GET DIRECTIONS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-dark dark:bg-black text-white py-24 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="font-playfair text-4xl mb-8">Join Us Tonight</h2>
+                    <p class="text-gray-400 text-lg mb-12">We look forward to welcoming you to Cantine Divino. For large parties or private events, please call us directly.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-gold/20 p-3 rounded-sm">
+                                <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Address</h4>
+                                <p class="text-gray-400">Mabua Rd, Kampala, Uganda</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-gold/20 p-3 rounded-sm">
+                                <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Phone</h4>
+                                <p class="text-gray-400">+256 700 805000</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-gold/20 p-3 rounded-sm">
+                                <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl mb-1">Hours</h4>
+                                <p class="text-gray-400">Mon - Sun: 11:00 AM – 11:00 PM</p>
+                                <p class="text-gold text-sm mt-1">Happy Hour: Daily 5:00 PM – 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-dark p-10 rounded-sm transition-colors duration-300">
+                    <h3 class="text-dark dark:text-white font-playfair text-3xl mb-8">Reserve a Table</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-500 dark:text-gray-400 text-sm mb-2">Name</label>
+                                <input type="text" class="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:border-gold outline-none text-dark dark:text-white bg-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-500 dark:text-gray-400 text-sm mb-2">Email</label>
+                                <input type="email" class="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:border-gold outline-none text-dark dark:text-white bg-transparent">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-500 dark:text-gray-400 text-sm mb-2">Date</label>
+                                <input type="date" class="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:border-gold outline-none text-dark dark:text-white bg-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-gray-500 dark:text-gray-400 text-sm mb-2">Guests</label>
+                                <select class="w-full border-b border-gray-300 dark:border-gray-700 py-2 focus:border-gold outline-none text-dark dark:text-white bg-transparent">
+                                    <option class="bg-white dark:bg-dark">2 People</option>
+                                    <option class="bg-white dark:bg-dark">4 People</option>
+                                    <option class="bg-white dark:bg-dark">6+ People</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="w-full bg-gold text-white py-4 font-bold hover:bg-dark dark:hover:bg-white dark:hover:text-dark transition-all">CONFIRM RESERVATION</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="font-playfair text-2xl font-bold tracking-widest text-gold">CANTINE DIVINO</span>
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="https://www.instagram.com/cantinedivino.ug/" target="_blank" class="text-white hover:text-gold transition-colors" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+            <p class="text-gray-500 mt-6">&copy; 2024 Cantine Divino. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+
+        
+        function switchMenuTab(tabId) {
+            document.querySelectorAll('.menu-category').forEach(cat => {
+                cat.classList.add('hidden');
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+
+            document.querySelectorAll('.menu-tab-btn').forEach(btn => {
+                btn.classList.remove('border-gold', 'text-gold');
+                btn.classList.add('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+            });
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.add('border-gold', 'text-gold');
+            activeBtn.classList.remove('text-gray-500', 'dark:text-gray-400', 'border-transparent');
+        }
+    
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        // Initialize Swiper after DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            const initSwiper = () => {
+                if (typeof Swiper !== 'undefined') {
+                    const swiper = new Swiper('.gallerySwiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                        loop: true,
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        breakpoints: {
+                            640: {
+                                slidesPerView: 2,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                            },
+                        },
+                        observer: true,
+                        observeParents: true,
+                        watchSlidesProgress: true,
+                    });
+                } else {
+                    setTimeout(initSwiper, 100);
+                }
+            };
+            initSwiper();
+        });
+    </script>
+</body>
+</html>
